@@ -8,7 +8,7 @@ while true; do
 		cat /dev/${DEVICE} | wget "http://localhost:8000/" -O /dev/null -q
 	else
 		clear
-        echo "Awaiting logic board"
-        sleep 1
+        	echo "Awaiting logic board"
+        	sleep 1
 	fi
 done
