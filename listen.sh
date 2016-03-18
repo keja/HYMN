@@ -5,7 +5,7 @@ while true; do
 		clear
 		echo "Connected to: ${DEVICE}"
 		echo "Listing for incoming events"
-		cat /dev/${DEVICE} | wget -o /dev/null "http://localhost:8000/"
+		cat /dev/${DEVICE} | wget "http://localhost:8000/" -O /dev/null -q
 	else
 		clear
         echo "Awaiting logic board"
