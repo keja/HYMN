@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic);
+
+html {
+	font-family: 'Titillium Web', sans-serif;
+	width: 540px;
+	padding: 20px;
+}
+
+#forms {
+	width: 540px;
+	position: absolute;
+}
+
+.q {
+	font-weight: bold;
+}
+
+.minval {
+	text-align: left;
+	position: absolute;
+	width: 100%;
+}
+
+
+.maxval {
+	text-align: right;
+	position: absolute;
+	width: 100%;
+}
+
+label > input{ /* HIDE RADIO */
+	visibility: hidden; /* Makes input not-clickable */
+	position: absolute; /* Remove input from document flow */
+}
+
+label > input + img{ /* IMAGE STYLES */
+	cursor: pointer;
+	border: 2px solid transparent;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+	border: 2px solid #1b77bd;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background: #1b77bd;
+	border: none; 
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.ui-widget-header {
+	background: #44a9df;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.ui-slider-horizontal {
+	height: 12px;
+}
+
+.ui-widget-content {
+	border: 1px solid #44a9df;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

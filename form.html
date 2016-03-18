@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hymn form</title>
+
+	<link rel="stylesheet" href="jquery-ui-1.8.18/themes/base/jquery.ui.all.css">
+	<script src="jquery-ui-1.8.18/jquery-1.7.1.js"></script>
+	<script src="jquery-ui-1.8.18/ui/jquery.ui.core.js"></script>
+	<script src="jquery-ui-1.8.18/ui/jquery.ui.widget.js"></script>
+	<script src="jquery-ui-1.8.18/ui/jquery.ui.mouse.js"></script>
+	<script src="jquery-ui-1.8.18/ui/jquery.ui.slider.js"></script>
+
+	<link rel="stylesheet" href="css/main.css" />
+
+	<script>
+	$(function() {
+		var select = $( "#intensity" );
+		var slider = $( "<br><br><div id='slider-intensity'></div>" ).insertAfter( select ).slider({
+			min: 1,
+			max: 11,
+			range: "min",
+			value: select[ 0 ].selectedIndex + 1,
+			slide: function( event, ui ) {
+				select[ 0 ].selectedIndex = ui.value - 1;
+			}
+		});
+		$( "#intensity" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});
+	});
+	</script>
+
+	<script>
+	$(function() {
+		var select = $( "#hearing" );
+		var slider = $( "<br><br><div id='slider-hearing'></div>" ).insertAfter( select ).slider({
+			min: 1,
+			max: 11,
+			range: "min",
+			value: select[ 0 ].selectedIndex + 1,
+			slide: function( event, ui ) {
+				select[ 0 ].selectedIndex = ui.value - 1;
+			}
+		});
+		$( "#hearing" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});
+	});
+	</script>
+
+	<script>
+	$(function() {
+		var select = $( "#fullness" );
+		var slider = $( "<br><br><div id='slider-fullness'></div>" ).insertAfter( select ).slider({
+			min: 1,
+			max: 11,
+			range: "min",
+			value: select[ 0 ].selectedIndex + 1,
+			slide: function( event, ui ) {
+				select[ 0 ].selectedIndex = ui.value - 1;
+			}
+		});
+		$( "#fullness" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});
+	});
+	</script>
+
+	<script>
+	$(function() {
+		var select = $( "#tinnitus" );
+		var slider = $( "<br><br><div id='slider-tinnitus'></div>" ).insertAfter( select ).slider({
+			min: 1,
+			max: 11,
+			range: "min",
+			value: select[ 0 ].selectedIndex + 1,
+			slide: function( event, ui ) {
+				select[ 0 ].selectedIndex = ui.value - 1;
+			}
+		});
+		$( "#tinnitus" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});
+	});
+	</script>
+
+</head>
+<body>
+
+<h1>Attack information</h1>
+<div id="forms">
+<form>
+	<p>
+		<p class="q">The attack happened:</p>
+		<select name="attack">
+			<option value="1" selected>Friday, 18th of March, 15:12</option>
+			<option value="2">Wednesday, 16th of March, 19:53</option>
+			<option value="3">Saturday, 12th of March, 13:41</option>
+			<option value="4">Tuesday, 8th of March, 20:11</option>
+		</select>
+	</p>
+
+	<br>
+
+	<p id="dizzy-p">
+		<p class="q">What kind of dizziness did you feel?</p>
+		<label for="101">
+			<input id="101" type="radio" name="dizziness" value="vertigo" checked>
+			<img src="graphics/dizzy_vertigo.png">
+		</label>
+		<label for="102">
+		<input id="102" type="radio" name="dizziness" value="ship">
+			<img src="graphics/dizzy_ship.png">
+		</label>
+		<label for="103">
+			<input id="103" type="radio" name="dizziness" value="drunk">
+			<img src="graphics/dizzy_drunk.png">
+		</label>
+	</p>
+
+	<br>
+
+	<p>
+		<label for="intensity" class="q">How intense was the dizziness?</label>
+		<select name="intensity" id="intensity" style="display:none;">
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+		<div class="minval">No dizziness</div>
+		<div class="maxval">More intense imaginable</div>
+	</p>
+
+	<br><br><br>
+
+	<p>
+		<label for="hearing" class="q">How bad was your hearing loss?</label>
+		<select name="hearing" id="hearing" style="display:none;">
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+		<div class="minval">No hearing loss</div>
+		<div class="maxval">Couldn't hear anything</div>
+	</p>
+
+	<br><br><br>
+
+	<p>
+		<label for="fullness" class="q">How bad was your "aural fullness" (pressure sensation in the inner ear)?</label>
+		<select name="fullness" id="fullness" style="display:none;">
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+		<div class="minval">No pressure</div>
+		<div class="maxval">Worse than iamginable</div>
+	</p>
+
+	<br><br><br>
+
+	<p>
+		<label for="tinnitus" class="q">How bad was your tinnitus?</label>
+		<select name="tinnitus" id="tinnitus" style="display:none;">
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+		<div class="minval">No tinnitus</div>
+		<div class="maxval">Worse than imaginable</div>
+	</p>
+
+	<br><br><br>
+
+	<p>
+		<button type="submit" name="submitButton">Submit</button>
+	</p>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
